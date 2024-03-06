@@ -13,10 +13,10 @@ st.title('Predicción de Precios de Laptops - Grupo N° 03')
 
 # Controles de entrada para las características
 ram = st.number_input('Ram (GB)', min_value=1, max_value=64, value=8)
-screen_width = st.number_input('pixel_H', min_value=800, max_value=4000, value=1920)
-screen_height = st.number_input('pixel_V', min_value=600, max_value=3000, value=1080)
-ssd = st.number_input('GHZ', min_value=0, max_value=2000, value=256)
-ghz = st.number_input('GHZ', min_value=0.1, max_value=5.0, value=2.5)
+screen_width = st.number_input('screen_width', min_value=800, max_value=4000, value=1920)
+screen_height = st.number_input('screen_height', min_value=600, max_value=3000, value=1080)
+ssd = st.number_input('SSD', min_value=0, max_value=2000, value=256)
+ghz = st.number_input('GHz', min_value=0.1, max_value=5.0, value=2.5)
 type_gaming = st.selectbox('¿Es Gaming?', ['No', 'Sí'])
 type_notebook = st.selectbox('¿Es Notebook?', ['No', 'Sí'])
 
@@ -27,7 +27,7 @@ type_notebook = 1 if type_notebook == 'Sí' else 0
 # Botón para realizar predicción
 if st.button('Predecir Precio'):
     # Crear DataFrame con las entradas
-    input_data = pd.DataFrame([[ram, screen_width, screen_height, ssd, ghz, type_gaming, type_notebook]],
+    input_data = pd.DataFrame([[ram, pixel_H, pixel_V, GHZ, GHZ, type_gaming, type_notebook]],
                     columns=['Ram', 'screen_width', 'screen_height', 'SSD', 'GHz', 'TypeName_Gaming', 'TypeName_Notebook'])
 
     # Estandarización de las características
