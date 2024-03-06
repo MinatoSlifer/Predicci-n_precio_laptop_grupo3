@@ -5,7 +5,7 @@ import pickle
 from sklearn.preprocessing import StandardScaler
 
 # Cargar el modelo entrenado
-with open('C:/Users/DESARROLLOSISPAS3/Desktop/Curso IA/Módulo03/Plantila web/modelo_optimizado_grupo3.pkl', 'rb') as file:
+with open('modelo_optimizado_grupo3.pkl', 'rb') as file:
     modelo = pickle.load(file)
 
 # Definir la interfaz de usuario en Streamlit
@@ -39,3 +39,5 @@ if st.button('Predecir Precio'):
 
     # Mostrar predicción
     st.write(f'Precio predecido: {prediction[0]:.2f} euros')
+
+
