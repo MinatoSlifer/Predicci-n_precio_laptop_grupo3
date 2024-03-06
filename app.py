@@ -5,18 +5,18 @@ import pickle
 from sklearn.preprocessing import StandardScaler
 
 # Cargar el modelo entrenado
-with open('modelo_optimizado_grupo3.pkl', 'rb') as file:
+with open('C:/Users/DESARROLLOSISPAS3/Desktop/Curso IA/Módulo03/Plantila web/modelo_optimizado_grupo3.pkl', 'rb') as file:
     modelo = pickle.load(file)
 
 # Definir la interfaz de usuario en Streamlit
 st.title('Predicción de Precios de Laptops - Grupo N° 03')
 
 # Controles de entrada para las características
-ram = st.number_input('RAM (GB)', min_value=1, max_value=64, value=8)
-screen_width = st.number_input('Ancho de Pantalla', min_value=800, max_value=4000, value=1920)
-screen_height = st.number_input('Alto de Pantalla', min_value=600, max_value=3000, value=1080)
-ssd = st.number_input('SSD (GB)', min_value=0, max_value=2000, value=256)
-ghz = st.number_input('GHz del CPU', min_value=0.1, max_value=5.0, value=2.5)
+ram = st.number_input('Ram (GB)', min_value=1, max_value=64, value=8)
+screen_width = st.number_input('pixel_H', min_value=800, max_value=4000, value=1920)
+screen_height = st.number_input('pixel_V', min_value=600, max_value=3000, value=1080)
+ssd = st.number_input('GHZ', min_value=0, max_value=2000, value=256)
+ghz = st.number_input('GHZ', min_value=0.1, max_value=5.0, value=2.5)
 type_gaming = st.selectbox('¿Es Gaming?', ['No', 'Sí'])
 type_notebook = st.selectbox('¿Es Notebook?', ['No', 'Sí'])
 
@@ -39,5 +39,3 @@ if st.button('Predecir Precio'):
 
     # Mostrar predicción
     st.write(f'Precio predecido: {prediction[0]:.2f} euros')
-
-
